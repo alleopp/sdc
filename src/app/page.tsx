@@ -1,102 +1,150 @@
 import Image from "next/image";
+import { mockSupabase } from "@/data/mockData";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="min-h-screen">
+      {/* Header with Contact Info */}
+      <header className="bg-[rgb(16,12,106)] text-white py-4 px-6 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-4">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/logo.png"
+              alt="SD Construction Logo"
+              width={100}
+              height={100}
+              className="rounded bg-white p-2"
             />
-            Deploy now
-          </a>
+            <div>
+              <h1 className="text-2xl font-bold">SD Construction</h1>
+              <p className="text-sm text-gray-200">General Construction and Development</p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <a
+              href={`mailto:${mockSupabase.contact.email}`}
+              className="bg-white text-[rgb(16,12,106)] px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Email Us
+            </a>
+            <a
+              href={`tel:${mockSupabase.contact.phone}`}
+              className="bg-white text-[rgb(16,12,106)] px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              {mockSupabase.contact.phone}
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="brand-gradient text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-5xl font-bold mb-6 uppercase tracking-wide">{mockSupabase.tagline}</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+            {mockSupabase.mission}
+          </p>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
+            className="inline-block bg-white text-[rgb(16,12,106)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
           >
-            Read our docs
+            Get a Free Quote
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about" className="py-16 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8 text-[rgb(16,12,106)] uppercase">About S.D. Construction &amp; Development, Inc.</h2>
+          <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mb-6">
+            {mockSupabase.about}
+          </p>
+          <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Starting my business, I had a vision to bring something new to the industry: superior customer service, innovative construction techniques, and simply a commitment to excellence in every project. Ultimately, my motivation to start a construction company came down to a desire to make a difference—whether that&apos;s creating homes that people live in for generations or executing commercial projects that enhance business success. It&apos;s all about turning dreams into reality, one brick at a time.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-[rgb(16,12,106)]">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {mockSupabase.services.map((service) => (
+              <div
+                key={service.id}
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[rgb(16,12,106)]"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-3 text-[rgb(16,12,106)]">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-16 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-[rgb(16,12,106)]">Our Work</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {mockSupabase.gallery.map((item) => (
+              <div
+                key={item.id}
+                className="relative overflow-hidden rounded-lg shadow-lg group"
+              >
+                <Image
+                  src={item.image_url}
+                  alt={item.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+                  <h3 className="text-white font-bold text-lg">{item.title}</h3>
+                  <p className="text-gray-200 text-sm">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="bg-[rgb(16,12,106)] text-white py-12 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">S.D. Construction &amp; Development</h3>
+            <p className="text-gray-300">
+              Building quality homes and lasting relationships in the Greater Boston area since 2009.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
+            <p className="text-gray-300 mb-2">
+              <strong>Phone:</strong> {mockSupabase.contact.phone}
+            </p>
+            <p className="text-gray-300 mb-2">
+              <strong>Email:</strong> {mockSupabase.contact.email}
+            </p>
+            <p className="text-gray-300">
+              <strong>Location:</strong> {mockSupabase.contact.address}
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold mb-4">Services</h3>
+            <ul className="text-gray-300 space-y-2">
+              {mockSupabase.services.slice(0, 6).map((service) => (
+                <li key={service.id}>{service.title}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-white/20 text-center text-gray-300">
+          <p>&copy; {new Date().getFullYear()} S.D. Construction &amp; Development. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
