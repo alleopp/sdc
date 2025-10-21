@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "S.D. Construction & Development - General Construction and Remodeling",
   description: "S.D. Construction and Development serves the Greater Boston area. We specialize in residential renovations, custom builds, and property improvements with European elegance and attention to detail.",
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
