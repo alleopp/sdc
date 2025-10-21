@@ -13,7 +13,7 @@ export default function Home() {
               alt="SD Construction Logo"
               width={60}
               height={60}
-              className="rounded bg-white p-1 md:p-2 w-[60px] h-[60px] md:w-[100px] md:h-[100px]"
+              className="rounded bg-white p-1 md:p-2 w-[100px] h-[60px] md:w-[140px] md:h-[100px]"
             />
             <div>
               <h1 className="text-sm md:text-2xl font-bold">SD Construction</h1>
