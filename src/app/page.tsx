@@ -15,11 +15,11 @@ export default function Home() {
               height={200}
               quality={100}
               priority
-              className="rounded bg-white"
+              className="rounded bg-white w-[100px] h-[50px] md:w-[220px] md:h-[150px]"
             />
             <div>
-              <h1 className="text-base md:text-2xl font-bold">SD Construction</h1>
-              <p className="text-xs md:text-sm text-gray-200 hidden sm:block">General Construction and Development</p>
+              <h1 className="text-base md:text-2xl font-bold">S.D. Construction</h1>
+              <p className="text-xs md:text-sm text-gray-200 ">General Construction and Development</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 md:gap-4">
