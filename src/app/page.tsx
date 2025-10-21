@@ -11,12 +11,14 @@ export default function Home() {
             <Image
               src="/logo.png"
               alt="SD Construction Logo"
-              width={60}
-              height={60}
-              className="rounded bg-white p-1 md:p-2 w-[100px] h-[60px] md:w-[140px] md:h-[100px]"
+              width={200}
+              height={200}
+              quality={100}
+              priority
+              className="rounded bg-white"
             />
             <div>
-              <h1 className="text-sm md:text-2xl font-bold">SD Construction</h1>
+              <h1 className="text-base md:text-2xl font-bold">SD Construction</h1>
               <p className="text-xs md:text-sm text-gray-200 hidden sm:block">General Construction and Development</p>
             </div>
           </div>
