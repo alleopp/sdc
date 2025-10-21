@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,9 +15,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "S.D. Construction & Development - General Construction and Remodeling",
   description: "S.D. Construction and Development serves the Greater Boston area. We specialize in residential renovations, custom builds, and property improvements with European elegance and attention to detail.",
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/favicon.ico",
-  }
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#100c6a",
 };
 
 export default function RootLayout({

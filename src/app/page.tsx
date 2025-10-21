@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header with Contact Info */}
-      <header className="bg-[rgb(16,12,106)] text-white py-3 px-4 md:py-4 md:px-6 sticky top-0 z-50 shadow-lg">
+      <header className="bg-white text-[rgb(16,12,106)] py-3 px-4 md:py-4 md:px-6 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           <div className="flex items-center gap-2 md:gap-4">
             <Image
@@ -15,23 +15,23 @@ export default function Home() {
               height={200}
               quality={100}
               priority
-              className="rounded bg-white w-[100px] h-[50px] md:w-[220px] md:h-[150px]"
+              className="rounded w-[100px] h-[50px] md:w-[220px] md:h-[150px]"
             />
             <div>
-              <h1 className="text-base md:text-2xl font-bold">S.D. Construction</h1>
-              <p className="text-xs md:text-sm text-gray-200 ">General Construction and Development</p>
+              <h1 className="text-base md:text-2xl font-bold text-[rgb(16,12,106)]">S.D. Construction</h1>
+              <p className="text-xs md:text-sm text-gray-600">General Construction and Development</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 md:gap-4">
             <a
               href={`mailto:${mockSupabase.contact.email}`}
-              className="bg-white text-[rgb(16,12,106)] px-3 py-1.5 md:px-6 md:py-2 rounded-lg text-xs md:text-base font-semibold hover:bg-gray-100 transition-colors text-center"
+              className="bg-[rgb(16,12,106)] text-white px-3 py-1.5 md:px-6 md:py-2 rounded-lg text-xs md:text-base font-semibold hover:bg-[rgb(30,25,150)] transition-colors text-center"
             >
               Email
             </a>
             <a
               href={`tel:${mockSupabase.contact.phone}`}
-              className="bg-white text-[rgb(16,12,106)] px-3 py-1.5 md:px-6 md:py-2 rounded-lg text-xs md:text-base font-semibold hover:bg-gray-100 transition-colors text-center whitespace-nowrap"
+              className="bg-[rgb(16,12,106)] text-white px-3 py-1.5 md:px-6 md:py-2 rounded-lg text-xs md:text-base font-semibold hover:bg-[rgb(30,25,150)] transition-colors text-center whitespace-nowrap"
             >
               Call Us
             </a>
