@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { mockSupabase } from "@/data/mockData";
 
 export default function Home() {
@@ -94,28 +95,42 @@ export default function Home() {
       <section id="gallery" className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-light text-center mb-4 text-[rgb(16,12,106)] uppercase tracking-wide">Our Work</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            A showcase of our recent projects and craftsmanship
+          <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+            Explore our portfolio by category
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockSupabase.gallery.map((item) => (
-              <div
-                key={item.id}
-                className="relative overflow-hidden rounded-lg shadow-lg group"
-              >
-                <Image
-                  src={item.image_url}
-                  alt={item.title}
-                  width={800}
-                  height={600}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
-                  <h3 className="text-white font-bold text-lg">{item.title}</h3>
-                  <p className="text-gray-200 text-sm">{item.description}</p>
-                </div>
-              </div>
-            ))}
+
+          {/* Category Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+            {Array.from(new Set(mockSupabase.gallery.map(item => item.category))).map((category) => {
+              const categoryImage = mockSupabase.gallery.find(item => item.category === category);
+              return (
+                <Link
+                  key={category}
+                  href={`/gallery?category=${category}`}
+                  className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group h-48"
+                >
+                  <Image
+                    src={categoryImage?.image_url || ''}
+                    alt={category}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center p-4">
+                    <h3 className="text-white font-semibold text-lg capitalize">{category}</h3>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center">
+            <Link
+              href="/gallery"
+              className="inline-block bg-[rgb(16,12,106)] text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-[rgb(30,25,150)] transition-colors"
+            >
+              View All Projects
+            </Link>
           </div>
         </div>
       </section>
