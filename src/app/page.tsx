@@ -56,9 +56,9 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-16 px-6 bg-gray-50">
+      <section id="about" className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8 text-[rgb(16,12,106)] uppercase">About S.D. Construction &amp; Development, Inc.</h2>
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-12 text-[rgb(16,12,106)] uppercase tracking-wide">About S.D. Construction &amp; Development</h2>
           <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mb-6">
             {mockSupabase.about}
           </p>
@@ -69,18 +69,21 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 px-6">
+      <section id="services" className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-[rgb(16,12,106)]">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-4 text-[rgb(16,12,106)] uppercase tracking-wide">Our Services</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Bringing European elegance and craftsmanship to every project
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockSupabase.services.map((service) => (
               <div
                 key={service.id}
-                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-t-4 border-[rgb(16,12,106)]"
+                className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-[rgb(16,12,106)]"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-[rgb(16,12,106)]">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <div className="text-3xl mb-4 opacity-80">{service.icon}</div>
+                <h3 className="text-lg font-semibold mb-3 text-[rgb(16,12,106)]">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">{service.description}</p>
               </div>
             ))}
           </div>
@@ -88,9 +91,12 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-16 px-6 bg-gray-50">
+      <section id="gallery" className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-[rgb(16,12,106)]">Our Work</h2>
+          <h2 className="text-3xl md:text-4xl font-light text-center mb-4 text-[rgb(16,12,106)] uppercase tracking-wide">Our Work</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            A showcase of our recent projects and craftsmanship
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mockSupabase.gallery.map((item) => (
               <div
