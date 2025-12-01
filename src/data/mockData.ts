@@ -119,7 +119,7 @@ export const mockSupabase = {
   ],
   contact: {
     email: 'sd_remodeling@yahoo.com',
-    phone: '+1 617-640-6490',
+    phone: '+1 617-640-6940',
     address: 'Greater Boston Area'
   },
   tagline: 'Building and Development with European Elegance',
