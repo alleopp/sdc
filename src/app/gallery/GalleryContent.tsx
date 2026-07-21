@@ -38,10 +38,10 @@ export default function GalleryContent() {
     <div className="max-w-7xl mx-auto px-4 py-12 md:px-6">
       {/* Page Title */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-light text-[rgb(16,12,106)] uppercase tracking-wide mb-4">
+        <h2 className="font-serif text-3xl md:text-4xl font-light text-charcoal tracking-tight mb-4">
           Project Gallery
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-charcoal/60 max-w-2xl mx-auto">
           Browse our portfolio of completed projects and see the quality of our craftsmanship
         </p>
       </div>
@@ -53,10 +53,10 @@ export default function GalleryContent() {
             <button
               key={category}
               onClick={() => handleCategoryChange(category)}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all capitalize ${
+              className={`px-6 py-2 rounded-md font-medium transition-all capitalize ${
                 selectedCategory === category
-                  ? "bg-[rgb(16,12,106)] text-white"
-                  : "bg-white text-[rgb(16,12,106)] border border-gray-300 hover:border-[rgb(16,12,106)]"
+                  ? "bg-accent text-white"
+                  : "bg-cream text-charcoal border border-charcoal/20 hover:border-accent"
               }`}
             >
               {category}
@@ -70,7 +70,7 @@ export default function GalleryContent() {
         {filteredGallery.map((item) => (
           <div
             key={item.id}
-            className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group bg-white"
+            className="relative overflow-hidden rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group bg-cream"
           >
             <div className="relative h-80 w-full">
               <Image
@@ -93,7 +93,7 @@ export default function GalleryContent() {
 
       {filteredGallery.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No projects found in this category.</p>
+          <p className="text-charcoal/50 text-lg">No projects found in this category.</p>
         </div>
       )}
     </div>
