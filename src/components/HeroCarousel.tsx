@@ -31,7 +31,7 @@ export default function HeroCarousel({
   }, [slides.length]);
 
   return (
-    <section className="relative h-[88vh] min-h-[560px] w-full overflow-hidden">
+    <section className="relative h-[88svh] min-h-[560px] w-full overflow-hidden">
       {/* Rotating background images */}
       {slides.map((slide, i) => (
         <div
