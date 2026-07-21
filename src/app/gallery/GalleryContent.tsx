@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { mockSupabase } from "@/data/mockData";
+import { siteContent } from "@/data/siteContent";
 import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
@@ -27,12 +27,12 @@ export default function GalleryContent() {
   };
 
   // Get unique categories from gallery items
-  const categories = ["all", ...Array.from(new Set(mockSupabase.gallery.map(item => item.category)))];
+  const categories = ["all", ...Array.from(new Set(siteContent.gallery.map(item => item.category)))];
 
   // Filter gallery items based on selected category
   const filteredGallery = selectedCategory === "all"
-    ? mockSupabase.gallery
-    : mockSupabase.gallery.filter(item => item.category === selectedCategory);
+    ? siteContent.gallery
+    : siteContent.gallery.filter(item => item.category === selectedCategory);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 md:px-6">
@@ -74,7 +74,7 @@ export default function GalleryContent() {
           >
             <div className="relative h-80 w-full">
               <Image
-                src={item.image_url}
+                src={item.image}
                 alt={item.title}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"

@@ -72,14 +72,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <Link
-          href="/#contact"
-          className="hidden md:inline-block bg-accent text-white px-5 py-2 rounded-md text-sm font-medium hover:bg-accent-dark transition-colors whitespace-nowrap"
-        >
-          Get a Quote
-        </Link>
-
         {/* Mobile menu toggle */}
         <button
           type="button"

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { mockSupabase } from "@/data/mockData";
+import { siteContent } from "@/data/siteContent";
 import Header from "@/components/Header";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Home() {
   return (
@@ -9,27 +10,35 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="brand-gradient text-charcoal py-24 md:py-32 px-6 border-b border-black/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-6xl font-light mb-8 tracking-tight leading-[1.1] text-charcoal">{mockSupabase.tagline}</h2>
-          <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed text-charcoal/70">
-            {mockSupabase.mission}
-          </p>
+      <HeroCarousel slides={siteContent.heroSlides}>
+        <h1 className="font-serif text-4xl md:text-6xl font-light mb-6 tracking-tight leading-[1.1] drop-shadow-sm">
+          {siteContent.tagline}
+        </h1>
+        <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed text-cream/90">
+          {siteContent.heroSubtitle}
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contact"
             className="inline-block bg-accent text-white px-8 py-4 rounded-md font-medium text-base hover:bg-accent-dark transition-colors"
           >
             Get a Free Quote
           </a>
+          <Link
+            href="/gallery"
+            className="inline-block border border-cream/60 text-cream px-8 py-4 rounded-md font-medium text-base hover:bg-cream/10 transition-colors"
+          >
+            View Our Work
+          </Link>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* About Us Section */}
       <section id="about" className="py-20 md:py-28 px-6 bg-cream">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-light text-center mb-12 text-charcoal tracking-tight">About S.D. Construction &amp; Development</h2>
           <p className="text-lg text-charcoal/80 max-w-4xl mx-auto leading-relaxed mb-6">
-            {mockSupabase.about}
+            {siteContent.about}
           </p>
           <p className="text-lg text-charcoal/80 max-w-4xl mx-auto leading-relaxed">
             Starting my business, I had a vision to bring something new to the industry: superior customer service, innovative construction techniques, and simply a commitment to excellence in every project. Ultimately, my motivation to start a construction company came down to a desire to make a difference—whether that&apos;s creating homes that people live in for generations or executing commercial projects that enhance business success. It&apos;s all about turning dreams into reality, one brick at a time.
@@ -45,7 +54,7 @@ export default function Home() {
             Bringing European elegance and craftsmanship to every project
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {mockSupabase.services.map((service) => (
+            {siteContent.services.map((service) => (
               <div
                 key={service.id}
                 className="bg-cream p-8 rounded-lg transition-all duration-300 border border-black/5 hover:border-accent/40 hover:shadow-sm"
@@ -69,8 +78,8 @@ export default function Home() {
 
           {/* Category Cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-            {Array.from(new Set(mockSupabase.gallery.map(item => item.category))).map((category) => {
-              const categoryImage = mockSupabase.gallery.find(item => item.category === category);
+            {Array.from(new Set(siteContent.gallery.map(item => item.category))).map((category) => {
+              const categoryImage = siteContent.gallery.find(item => item.category === category);
               return (
                 <Link
                   key={category}
@@ -78,7 +87,7 @@ export default function Home() {
                   className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group h-48"
                 >
                   <Image
-                    src={categoryImage?.image_url || ''}
+                    src={categoryImage?.image || ''}
                     alt={category}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -115,19 +124,19 @@ export default function Home() {
           <div>
             <h3 className="font-serif text-xl font-medium mb-4 text-cream">Contact Us</h3>
             <p className="text-cream/70 mb-2">
-              <strong className="font-medium text-cream/90">Phone:</strong> {mockSupabase.contact.phone}
+              <strong className="font-medium text-cream/90">Phone:</strong> {siteContent.contact.phone}
             </p>
             <p className="text-cream/70 mb-2">
-              <strong className="font-medium text-cream/90">Email:</strong> {mockSupabase.contact.email}
+              <strong className="font-medium text-cream/90">Email:</strong> {siteContent.contact.email}
             </p>
             <p className="text-cream/70">
-              <strong className="font-medium text-cream/90">Location:</strong> {mockSupabase.contact.address}
+              <strong className="font-medium text-cream/90">Location:</strong> {siteContent.contact.address}
             </p>
           </div>
           <div>
             <h3 className="font-serif text-xl font-medium mb-4 text-cream">Services</h3>
             <ul className="text-cream/70 space-y-2">
-              {mockSupabase.services.slice(0, 6).map((service) => (
+              {siteContent.services.slice(0, 6).map((service) => (
                 <li key={service.id}>{service.title}</li>
               ))}
             </ul>
