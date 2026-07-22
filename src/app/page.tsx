@@ -30,7 +30,7 @@ export default function Home() {
             href="#contact"
             className="inline-block bg-accent text-white px-8 py-4 rounded-md font-medium text-base hover:bg-accent-dark transition-colors"
           >
-            Get a Free Quote
+            Request a Consultation
           </a>
           <Link
             href="/gallery"
@@ -190,7 +190,7 @@ export default function Home() {
             Let&apos;s build something worth living in.
           </h2>
           <p className="text-cream/70 leading-relaxed mb-10 max-w-xl mx-auto">
-            Tell us about your project and we&apos;ll get back to you with a free, no-obligation quote.
+            Tell us about your project and we&apos;ll be in touch to schedule a no-obligation consultation.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

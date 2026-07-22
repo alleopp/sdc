@@ -115,7 +115,7 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             className="mt-2 bg-accent text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-accent-dark transition-colors text-center"
           >
-            Get a Quote
+            Request a Consultation
           </Link>
         </nav>
       )}
