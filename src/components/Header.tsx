@@ -41,21 +41,21 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 px-4 md:px-6 py-2.5">
         {/* Logo lockup: transparent mark + live text */}
-        <Link href="/" className="flex flex-col items-center shrink-0 leading-none" aria-label="S.D. Construction — Home">
+        <Link href="/" className="flex flex-col items-center shrink-0 leading-none" aria-label="SD Construction & Development — Home">
           <Image
             src="/logo.png"
-            alt="S.D. Construction & Development"
+            alt="SD Construction & Development"
             width={207}
             height={100}
             quality={100}
             priority
             className="h-8 md:h-10 w-auto"
           />
-          <span className="mt-1.5 text-sm md:text-lg font-semibold uppercase tracking-[0.15em] text-charcoal">
-            S.D. Construction
+          <span className="mt-2 text-sm md:text-xl font-bold uppercase tracking-[0.02em] text-[#100c6a] text-center">
+            SD Construction &amp; Development
           </span>
-          <span className="mt-0.5 text-[10px] md:text-xs tracking-wide text-charcoal/55">
-            General Construction &amp; Development
+          <span className="mt-1 text-[11px] md:text-sm text-[#100c6a]/60 underline underline-offset-2 decoration-[#100c6a]/40 text-center">
+            General Construction &amp; Remodeling
           </span>
         </Link>
 
