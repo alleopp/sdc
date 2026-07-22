@@ -144,6 +144,16 @@ export const siteContent = {
     phone: '+1 617-640-6940',
     address: 'Greater Boston Area'
   },
+  founder: {
+    name: 'Slava Dolghy',
+    role: 'Founder & General Contractor'
+  },
+  // Short credential strip shown in the About section.
+  highlights: [
+    { value: 'Est. 2009', label: 'Family-owned & operated' },
+    { value: 'Greater Boston', label: 'Proudly serving the region' },
+    { value: 'European', label: 'Old-world craftsmanship' }
+  ],
   tagline: 'Building and Development with European Elegance',
   heroSubtitle: 'Custom homes, additions, and remodels crafted with meticulous attention to detail across the Greater Boston area.',
   mission: 'When you are working with us to build or remodel the home or commercial space of your dreams, our goal remains the same: to tailor the project to meet the specific needs and dreams of the customer and to help clients to live and work in spaces that reflect their style, while also improving functionality, energy efficiency, and resale value.'
